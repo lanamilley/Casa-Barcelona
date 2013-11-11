@@ -1,0 +1,342 @@
+@import 'includes/brand.less';
+@import 'includes/typography.less';
+@import 'includes/mixins.less';
+
+* {
+  .box-sizing;
+}
+
+body {
+  background-color: @black;
+  color: @softcream;
+  font-size: 1em;
+  font-family: @bodyfont;
+}
+
+.container {
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 100px 0px;
+  width: 80%;
+  text-align: center;
+}
+
+h1, h2, h3, h4 {
+  font-family: @headingsfont;
+}
+
+a:link {
+  color: @softcream;
+  text-decoration: none;
+}
+a:hover {
+  color: @softcream;
+  text-decoration: none;
+}
+a:visited {
+  color: @softcream;
+  text-decoration: none;
+}
+
+.active {
+  border-bottom: 6px double @active;
+  font-size: 0.8em;
+}
+
+p {
+  text-align: left;
+  font: @bodyfont;
+}
+
+.content {
+  padding: 50px 0;
+}
+
+
+// Do this last on the initial build. Point out the rejig of navbg
+nav#topnav {
+  @navbg: lighten(@black, 10%);
+  position: fixed;
+  padding: 15px 0px;
+  width: 100%;
+  background: fadeout(@navbg, 5%);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-family: @bodyfont;
+  ul {
+    margin: 0 auto;
+    width: 50%;
+    li {
+      display: inline-block;
+      padding: 0px 10%;
+    }
+  }
+}
+
+header#intro {
+  background-image: url('../images/background.jpg');
+  background-repeat:repeat;
+  .logo {
+    margin: 0 auto 50px;
+    width: 250px;
+    height: 187px;
+    background-image: url('../images/logos/logo.svg');
+  }
+  h1.headline {
+    margin: 0 auto 50px;
+    width: 50%;
+    font-size: 1.7em;
+    line-height: 1.9em;
+  }
+  .head {
+  margin: 0 auto 50px;
+  width: 50%;
+  text-align: center;
+  text-transform:uppercase;
+  font-size: 1em;
+  line-height: 2.5em;
+  }
+}
+
+section#about {
+  background: @black;
+  color: @softcream;
+  .content {
+    .widthfloat(45%);
+  }
+}
+
+section#gallery {
+  background-image: url('../images/background.jpg');
+  background-repeat:repeat;
+  ul li {
+    .widthfloat(30%);
+    margin-bottom: 7%;
+  }
+  img {
+  border: 3px solid #000;
+  }
+}
+
+section#menu {
+  background: @black;
+  ul li {
+    .widthfloat(30%);
+    margin-bottom: 7%;
+  }
+  img {
+  border: 3px solid @softcream;
+  }
+}
+
+section#menuinfo {
+  background-image: url('../images/background.jpg');
+  background-repeat:repeat;
+  .names {
+  margin: 0 auto 50px;
+  text-align: center;
+  text-transform:uppercase;
+  font-size: 1.4em;
+  width: 50%;
+  }
+  .menulist {
+    margin: 0 auto 50px;
+    text-align: left;
+  }
+}
+
+
+section#contact {
+  background-image: url('../images/background.jpg');
+  background-repeat: repeat;
+  form {
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-family: @bodyfont;
+    label {
+      .widthfloat(25%);
+      .labelappend {
+        display: inline-block;
+        padding: 7px;
+        width:25%;
+        background: @softcream;
+        color: #000;
+      }
+      input {
+        margin-left: -5px;
+        padding: 5px;
+        width: 70%;
+        border: 1px solid @black;
+        background: @black;
+        color: @softcream;
+        text-transform: uppercase;
+        font-family: @bodyfont;
+        -webkit-appearance: none;
+      }
+    }
+    input[type="submit"] {
+      .widthfloat(15%);
+      padding: 5px;
+      border: 0 none;
+      background: @softcream;
+      font-size: 1.2em;
+      font-family: @bodyfont;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+  }
+}
+
+  .head {
+  margin: 0 auto 50px;
+  width: 50%;
+  text-align: center;
+  text-transform:uppercase;
+  font-size: 1em;
+  line-height: 2.5em;
+  }
+
+footer#footer {
+  background: @black;
+  color: @softcream;
+}
+
+// Tablet Media Query
+@media only screen and (max-width: 1024px) {
+
+  .container {
+    padding: 50px 0px;
+    width: 95%;
+  }
+
+  nav#topnav {
+    ul {
+      margin: 0 auto;
+      width: 100%;
+      li {
+        display: inline-block;
+        padding: 0px 5%;
+      }
+    }
+  }
+
+  header#intro {
+    h1.headline {
+      margin: 0 auto 50px;
+      width: 100%;
+      font-size: 2em;
+      line-height: 1.3em;
+    }
+  }
+
+  section#about {
+    .content {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  section#gallery {
+    ul li {
+      width: 50%;
+      margin: 0 0 7% 0;
+    }
+  }
+
+    section#menu {
+    ul li {
+      width: 50%;
+      margin: 0 0 7% 0;
+    }
+  }
+
+  section#contact {
+    form {
+      label {
+        width: 100%;
+        margin: 0 0 2% 0;
+        text-align: center;
+        .labelappend {
+          width:25%;
+          padding: 11px;
+        }
+        input {
+          margin-left: -5px;
+          padding: 10px;
+          width: 70%;
+          text-align: center;
+        }
+      }
+      input[type="submit"] {
+        width: 60%;
+        margin: 0;
+        float: none;
+        padding: 15px;
+      }
+    }
+  }
+
+}
+
+// Phone Media Query
+@media only screen and (max-width: 600px) and (min-width: 320px) {
+
+  h1, h2, h3, h4 {
+    margin-bottom: 0.8em;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  h4 {
+    font-size: 0.8em;
+  }
+
+  
+  section#gallery {
+    ul li {
+      width: 100%;
+      margin: 0 0 7% 0;
+    }
+  }
+
+  section#menu {
+    ul li {
+      width: 100%;
+      margin: 0 0 7% 0;
+    }
+  }
+
+  section#contact {
+    form {
+      label {
+        width: 100%;
+        margin: 0 0 7% 0;
+        .labelappend {
+          display: block;
+          width:100%;
+          padding: 10px;
+        }
+        input {
+          margin-left: 0px;
+          margin-top: -5px;
+          width: 100%;
+        }
+      }
+      input[type="submit"] {
+        width: 100%;
+        margin: 0;
+        float: none;
+        padding: 15px;
+      }
+    }
+  }
+
+}
